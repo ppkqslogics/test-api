@@ -7,9 +7,11 @@ function App() {
   const [books, setbooks] = useState();
   useEffect(() => {
     async function fetchData() {
-      axios.post("http://ed359272d97b.ngrok.io/api/book/search/", {
-        title_or_author: "",
-      });
+      await axios
+        .post("http://ed359272d97b.ngrok.io/api/book/search/", {
+          title_or_author: "",
+        })
+        .then((res) => setBooks(res.data.results));
     }
     fetchData();
   }, []);
