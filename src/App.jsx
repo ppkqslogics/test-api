@@ -11,7 +11,7 @@ function App() {
         .post("http://ed359272d97b.ngrok.io/api/book/search/", {
           title_or_author: "",
         })
-        .then((res) => setBooks(res.data.results));
+        .then((res) => setbooks(res.data.results));
     }
     fetchData();
   }, []);
